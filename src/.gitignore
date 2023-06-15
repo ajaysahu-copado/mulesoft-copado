@@ -1,0 +1,135 @@
+# Package.xml #
+#################################################################################################
+# This file is recreated on the fly by Copado, no need to track unnecessary changes of this file.
+#################################################################################################
+
+package.xml
+
+# Managed packages #
+#################################################################################################
+# Deploying managed packages can trigger the installation or uninstallation of applications, it
+# is recommended to manage this outside git.
+# Note: This does not automatically exclude all components of the managed package(s). Specify
+# those in the next section.
+#################################################################################################
+
+installedPackages/*
+
+# Managed Package Customization [1] (CUSTOMIZING: NO) #
+#################################################################################################
+# Note: If you choose this option, don't include anything under [2]
+# if you are *not* customizing a managed package, you can keep your repository clean by ignoring 
+# all files for that package. For example, to ignore all files of the "Copado" managed package
+# just add to your gitignore file the following text: *copado__*
+#################################################################################################
+
+#*copado__*
+<list your managed package name prefixes here>
+
+# Managed Package Customization [2] (CUSTOMIZING: YES) #
+#################################################################################################
+# Note: If you choose this option, don't include anything under [1]
+# if you *will* be customizing modified portions of managed packages, make sure that the same
+# version of the package is installed in all your environments so that deployments will *only*
+# update existing managed components. Creation of managed components is not permitted by the API.
+# It is recommended that you ignore managed components that cannot be modified since there is no
+# since there is no need to track them in Git, for example:
+#
+# src/classes/copado__*
+# src/triggers/copado__*
+# src/pages/copado__*
+#################################################################################################
+
+#src/classes/copado__*
+#src/triggers/copado__*
+#src/pages/copado__*
+
+#src/classes/copadoconnect__*
+#src/triggers/copadoconnect__*
+#src/pages/copadoconnect__*
+
+#src/classes/copadovsm__*
+#src/triggers/copadovsm__*
+#src/pages/copadovsm__*
+
+#src/classes/pub__*
+#src/triggers/pub__*
+#src/pages/pub__*
+
+Canvases*
+
+# Translations #
+#################################################################################################
+# Translations are complex since they get updated indirectly across multiple files, they can make
+# a deployment fail if a field is translated in source and it doesn't exist on destination. 
+# If you are committing incrementally new fields and new Translations you can track them in Git,
+# just be careful. 
+# If you choose to ignore them in Git, you can always create a deployment with the Copado
+# Deployer "Translation" Step.
+#################################################################################################
+
+#translations/*
+#objectTranslations/*
+
+# Sites #
+#################################################################################################
+# Sites which have a Domain mapping have environment-specific information. 
+# Make sure you setup Copado Environment Variables to make Sites config files environment
+# agnostic. Until the above is achieved, you can ignore them.
+#################################################################################################
+
+#sites/*
+#siteDotComSites/*
+
+# Misc #
+#################################################################################################
+# Documents, Reports, and Dashboards are mostly created in Production and are not deployed between
+# Sandboxes. You can safely ignore them in Git.
+#################################################################################################
+
+#documents/*
+#reports/*
+#dashboards/*
+
+# Security #
+#################################################################################################
+# These should include any Certs, Named Credentials or RSA Keys.
+#################################################################################################
+
+#certs
+#certs/*
+#namedCredentials
+#namedCredentials/*
+
+# Vlocity EPC #
+#################################################################################################
+# EPC components will be versioned/deployed from a separate repo
+#################################################################################################
+vlocity/AttributeAssignmentRule
+vlocity/AttributeCategory
+vlocity/CalculationMatrix
+vlocity/CalculationProcedure
+vlocity/Catalog
+vlocity/ContextAction
+vlocity/ContextDimension
+vlocity/ContextScope
+vlocity/CpqConfigurationSetup
+vlocity/EntityFilter
+vlocity/ObjectClass
+vlocity/ObjectContextRule
+vlocity/Vlocity Object Rule Assignment
+vlocity/ObjectLayout
+vlocity/OfferMigrationPlan
+vlocity/Pricebook2
+vlocity/Salesforce Standard Object
+vlocity/PriceList
+vlocity/PricingPlan
+vlocity/PricingVariable
+vlocity/Product2
+vlocity/Salesforce Standard Object
+vlocity/Promotion
+vlocity/TimePlan
+vlocity/TimePolicy
+vlocity/UIFacet
+vlocity/UISection
+vlocity/VlocityPicklist
